@@ -73,7 +73,7 @@ async def start_uploading(data, source, header):
     
     title = data["title"] + f" ({source['quality']}p)"
     link = source['url']
-    ep_id = data["ep_id"]
+    ep_id = data['ep_id']
     total_size = source['size']
     name = f"{title} [@{UPLOADS_USERNAME}].mp4"
     fpath = "downloads/" + name
