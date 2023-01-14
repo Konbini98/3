@@ -23,7 +23,7 @@ async def tg_handler():
         if len(queue) != 0:
             i = queue[0]
             queue.remove(i)
-            data = AnimePahe.get_episode_links(i['ep_id'])
+            data = AnimePahe.get_episode_links(i["ep_id"])
             if not data:
                 await del_anime(i["title"])
                 await save_uploads(i["title"])
@@ -73,7 +73,7 @@ async def start_uploading(data, source, header):
     
     title = data["title"] + f" ({source['quality']}p)"
     link = source['url']
-    ep_id = data['ep_id']
+    ep_id = data["ep_id"]
     total_size = source['size']
     name = f"{title} [@{UPLOADS_USERNAME}].mp4"
     fpath = "downloads/" + name
